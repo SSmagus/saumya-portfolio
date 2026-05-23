@@ -15995,7 +15995,7 @@ function getResponse() {
 }
 var HEADERS = { TSS_SHELL: "X-TSS_SHELL" };
 async function getStartManifest(matchedRoutes) {
-  const { tsrStartManifest } = await import("./_tanstack-start-manifest_v-raRpt3We.js");
+  const { tsrStartManifest } = await import("./_tanstack-start-manifest_v-CFieGugy.js");
   const startManifest = tsrStartManifest();
   const rootRoute = startManifest.routes[rootRouteId] = startManifest.routes[rootRouteId] || {};
   rootRoute.assets = rootRoute.assets || [];
@@ -17081,8 +17081,8 @@ var getBaseManifest = getProdBaseManifest;
 var createEarlyHintsForRequest = createEarlyHintsCollector;
 async function loadEntries() {
   const [routerEntry, startEntry, pluginAdapters] = await Promise.all([
-    import("./router-CA-s1ZY_.js"),
-    import("./start-BW20vcjC.js"),
+    import("./router-C1t1A4Xw.js"),
+    import("./start-CNIbwGUS.js"),
     import("./__23tanstack-start-plugin-adapters-Cwee5PKy.js")
   ]);
   return {
@@ -17120,8 +17120,8 @@ If you intentionally handle CSRF another way, disable this warning:
     },
   })`);
 }
-var ROUTER_BASEPATH = "PortfolioV2";
-var SERVER_FN_BASE = "/PortfolioV2/_serverFn/";
+var ROUTER_BASEPATH = "saumya-portfolio";
+var SERVER_FN_BASE = "/saumya-portfolio/_serverFn/";
 var IS_PRERENDERING = process.env.TSS_PRERENDERING === "true";
 var IS_SHELL_ENV = process.env.TSS_SHELL === "true";
 var ERR_NO_RESPONSE = "Internal Server Error";

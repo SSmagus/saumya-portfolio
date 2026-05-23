@@ -129,6 +129,13 @@ function RootShell({ children }: { children: React.ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
 
+  const redirect = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+
+  if (redirect && redirect !== location.href) {
+    history.replaceState(null, "", redirect);
+  }
+
   return (
     <QueryClientProvider client={queryClient}>
       <Outlet />

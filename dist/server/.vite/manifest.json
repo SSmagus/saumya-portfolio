@@ -9,8 +9,8 @@
     "file": "assets/styles-Do0Dgaq_.css",
     "src": "C:/Users/Lenovo/OneDrive/Documents/documents/portfoliov2/src/styles.css"
   },
-  "_server-CFO7rA0W.js": {
-    "file": "assets/server-CFO7rA0W.js",
+  "_server-BNS0nNkJ.js": {
+    "file": "assets/server-BNS0nNkJ.js",
     "name": "server",
     "isDynamicEntry": true,
     "dynamicImports": [
@@ -20,20 +20,20 @@
       "%23tanstack-start-plugin-adapters"
     ]
   },
-  "_worker-entry-DwXCojiG.js": {
-    "file": "assets/worker-entry-DwXCojiG.js",
+  "_worker-entry-BpZmjwT_.js": {
+    "file": "assets/worker-entry-BpZmjwT_.js",
     "name": "worker-entry",
     "dynamicImports": [
-      "_server-CFO7rA0W.js"
+      "_server-BNS0nNkJ.js"
     ]
   },
   "src/router.tsx": {
-    "file": "assets/router-CA-s1ZY_.js",
+    "file": "assets/router-C1t1A4Xw.js",
     "name": "router",
     "src": "src/router.tsx",
     "isDynamicEntry": true,
     "imports": [
-      "_server-CFO7rA0W.js"
+      "_server-BNS0nNkJ.js"
     ],
     "dynamicImports": [
       "src/routes/index.tsx?tsr-split=component"
@@ -43,26 +43,26 @@
     ]
   },
   "src/routes/index.tsx?tsr-split=component": {
-    "file": "assets/index-C_Ms_Ge8.js",
+    "file": "assets/index-4P3HTicK.js",
     "name": "index",
     "src": "src/routes/index.tsx?tsr-split=component",
     "isDynamicEntry": true,
     "imports": [
-      "_server-CFO7rA0W.js"
+      "_server-BNS0nNkJ.js"
     ]
   },
   "src/start.ts": {
-    "file": "assets/start-BW20vcjC.js",
+    "file": "assets/start-CNIbwGUS.js",
     "name": "start",
     "src": "src/start.ts",
     "isDynamicEntry": true,
     "imports": [
-      "_worker-entry-DwXCojiG.js",
-      "_server-CFO7rA0W.js"
+      "_worker-entry-BpZmjwT_.js",
+      "_server-BNS0nNkJ.js"
     ]
   },
   "tanstack-start-manifest:v": {
-    "file": "assets/_tanstack-start-manifest_v-raRpt3We.js",
+    "file": "assets/_tanstack-start-manifest_v-CFieGugy.js",
     "name": "_tanstack-start-manifest_v",
     "src": "tanstack-start-manifest:v",
     "isDynamicEntry": true
@@ -73,7 +73,7 @@
     "src": "virtual:cloudflare/worker-entry",
     "isEntry": true,
     "imports": [
-      "_worker-entry-DwXCojiG.js"
+      "_worker-entry-BpZmjwT_.js"
     ]
   }
 }
