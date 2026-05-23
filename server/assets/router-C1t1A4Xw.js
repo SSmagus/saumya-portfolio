@@ -1,4 +1,4 @@
-import { Q as reactExports, u as functionalUpdate$1, b as arraysEqual, h as createLRUCache, E as isPromise, F as isRedirect, C as isNotFound, y as invariant, g as createControlledPromise, Z as rootRouteId, G as isServer$1, e as compileDecodeCharMap, $ as trimPath, Y as rewriteBasepath, f as composeRewrites, P as processRouteTree, N as processRouteMasks, X as resolvePath, d as cleanPath, a1 as trimPathRight, M as parseHref, p as executeRewriteInput, z as isDangerousProtocol, S as redirect, t as findSingleMatch, k as deepEqual, D as DEFAULT_PROTOCOL_ALLOWLIST, c as buildRouteBranch, x as interpolatePath, L as nullReplaceEqualDeep, U as replaceEqualDeep$1, J as last, j as decodePath, r as findFlatMatch, s as findRouteMatch, w as hasKeys, q as executeRewriteOutput, m as encodePathLikeUrl, a0 as trimPathLeft, H as joinPaths, a3 as useRouter, l as dummyMatchContext, K as matchContext, V as requireReactDom, o as exactPathTest, T as removeTrailingSlash, R as React, I as jsxRuntimeExports, B as isModuleNotFoundError, a2 as useHydrated, n as escapeHtml, A as isInlinableStylesheet, v as getAssetCrossOrigin, W as resolveManifestAssetLink, O as Outlet } from "./server-B0VtoPaO.js";
+import { Q as reactExports, u as functionalUpdate$1, b as arraysEqual, h as createLRUCache, E as isPromise, F as isRedirect, C as isNotFound, y as invariant, g as createControlledPromise, Z as rootRouteId, G as isServer$1, e as compileDecodeCharMap, $ as trimPath, Y as rewriteBasepath, f as composeRewrites, P as processRouteTree, N as processRouteMasks, X as resolvePath, d as cleanPath, a1 as trimPathRight, M as parseHref, p as executeRewriteInput, z as isDangerousProtocol, S as redirect, t as findSingleMatch, k as deepEqual, D as DEFAULT_PROTOCOL_ALLOWLIST, c as buildRouteBranch, x as interpolatePath, L as nullReplaceEqualDeep, U as replaceEqualDeep$1, J as last, j as decodePath, r as findFlatMatch, s as findRouteMatch, w as hasKeys, q as executeRewriteOutput, m as encodePathLikeUrl, a0 as trimPathLeft, H as joinPaths, a3 as useRouter, l as dummyMatchContext, K as matchContext, V as requireReactDom, o as exactPathTest, T as removeTrailingSlash, R as React, I as jsxRuntimeExports, B as isModuleNotFoundError, a2 as useHydrated, n as escapeHtml, A as isInlinableStylesheet, v as getAssetCrossOrigin, W as resolveManifestAssetLink, O as Outlet } from "./server-BNS0nNkJ.js";
 import "node:async_hooks";
 import "node:stream/web";
 import "node:stream";
@@ -93,7 +93,7 @@ function createRouterStores(initialState, config) {
   const loadedAt = createMutableStore(initialState.loadedAt);
   const isLoading = createMutableStore(initialState.isLoading);
   const isTransitioning = createMutableStore(initialState.isTransitioning);
-  const location = createMutableStore(initialState.location);
+  const location2 = createMutableStore(initialState.location);
   const resolvedLocation = createMutableStore(initialState.resolvedLocation);
   const statusCode = createMutableStore(initialState.statusCode);
   const redirect2 = createMutableStore(initialState.redirect);
@@ -108,7 +108,7 @@ function createRouterStores(initialState, config) {
     return matchStores.get(matchId)?.get().status === "pending";
   }));
   const matchRouteDeps = createReadonlyStore(() => ({
-    locationHref: location.get().href,
+    locationHref: location2.get().href,
     resolvedLocationHref: resolvedLocation.get()?.href,
     status: status.get()
   }));
@@ -118,7 +118,7 @@ function createRouterStores(initialState, config) {
     isLoading: isLoading.get(),
     isTransitioning: isTransitioning.get(),
     matches: matches.get(),
-    location: location.get(),
+    location: location2.get(),
     resolvedLocation: resolvedLocation.get(),
     statusCode: statusCode.get(),
     redirect: redirect2.get()
@@ -143,7 +143,7 @@ function createRouterStores(initialState, config) {
     loadedAt,
     isLoading,
     isTransitioning,
-    location,
+    location: location2,
     resolvedLocation,
     statusCode,
     redirect: redirect2,
@@ -840,9 +840,9 @@ const componentTypes = [
   "pendingComponent",
   "notFoundComponent"
 ];
-function getLocationChangeInfo(location, resolvedLocation) {
+function getLocationChangeInfo(location2, resolvedLocation) {
   const fromLocation = resolvedLocation;
-  const toLocation = location;
+  const toLocation = location2;
   return {
     fromLocation,
     toLocation,
@@ -978,19 +978,19 @@ var RouterCore = class {
           state: replaceEqualDeep$1(previousLocation?.state, state)
         };
       };
-      const location = parse(locationToParse);
-      const { __tempLocation, __tempKey } = location.state;
+      const location2 = parse(locationToParse);
+      const { __tempLocation, __tempKey } = location2.state;
       if (__tempLocation && (!__tempKey || __tempKey === this.tempLocationKey)) {
         const parsedTempLocation = parse(__tempLocation);
-        parsedTempLocation.state.key = location.state.key;
-        parsedTempLocation.state.__TSR_key = location.state.__TSR_key;
+        parsedTempLocation.state.key = location2.state.key;
+        parsedTempLocation.state.__TSR_key = location2.state.__TSR_key;
         delete parsedTempLocation.state.__tempLocation;
         return {
           ...parsedTempLocation,
-          maskedLocation: location
+          maskedLocation: location2
         };
       }
-      return location;
+      return location2;
     };
     this.resolvePathWithBase = (from, path) => {
       return resolvePath({
@@ -1213,13 +1213,13 @@ var RouterCore = class {
         rest.search = this.options.parseSearch(parsed.search);
         rest.hash = parsed.hash.slice(1);
       }
-      const location = this.buildLocation({
+      const location2 = this.buildLocation({
         ...rest,
         _includeValidateSearch: true
       });
-      this.pendingBuiltLocation = location;
+      this.pendingBuiltLocation = location2;
       const commitPromise = this.commitLocation({
-        ...location,
+        ...location2,
         viewTransition,
         replace,
         resetScroll,
@@ -1227,7 +1227,7 @@ var RouterCore = class {
         ignoreBlocker
       });
       Promise.resolve().then(() => {
-        if (this.pendingBuiltLocation === location) this.pendingBuiltLocation = void 0;
+        if (this.pendingBuiltLocation === location2) this.pendingBuiltLocation = void 0;
       });
       return commitPromise;
     };
@@ -1241,12 +1241,12 @@ var RouterCore = class {
       if (hrefIsUrl && !reloadDocument) reloadDocument = true;
       if (reloadDocument) {
         if (to !== void 0 || !href) {
-          const location = this.buildLocation({
+          const location2 = this.buildLocation({
             to,
             ...rest
           });
-          href = href ?? location.publicHref;
-          publicHref = publicHref ?? location.publicHref;
+          href = href ?? location2.publicHref;
+          publicHref = publicHref ?? location2.publicHref;
         }
         const reloadHref = !hrefIsUrl && publicHref ? publicHref : href;
         if (isDangerousProtocol(reloadHref, this.protocolAllowlist)) {
@@ -1462,14 +1462,14 @@ var RouterCore = class {
       this.shouldViewTransition = false;
       return this.load({ sync: opts?.sync });
     };
-    this.getParsedLocationHref = (location) => {
-      return location.publicHref || "/";
+    this.getParsedLocationHref = (location2) => {
+      return location2.publicHref || "/";
     };
     this.resolveRedirect = (redirect2) => {
       const locationHeader = redirect2.headers.get("Location");
       if (!redirect2.options.href || redirect2.options._builtLocation) {
-        const location = redirect2.options._builtLocation ?? this.buildLocation(redirect2.options);
-        const href = this.getParsedLocationHref(location);
+        const location2 = redirect2.options._builtLocation ?? this.buildLocation(redirect2.options);
+        const href = this.getParsedLocationHref(location2);
         redirect2.options.href = href;
         redirect2.headers.set("Location", href);
       } else if (locationHeader) try {
@@ -1540,11 +1540,11 @@ var RouterCore = class {
         return;
       }
     };
-    this.matchRoute = (location, opts) => {
+    this.matchRoute = (location2, opts) => {
       const matchLocation = {
-        ...location,
-        to: location.to ? this.resolvePathWithBase(location.from || "", location.to) : void 0,
-        params: location.params || {},
+        ...location2,
+        to: location2.to ? this.resolvePathWithBase(location2.from || "", location2.to) : void 0,
+        params: location2.params || {},
         leaveParams: true
       };
       const next = this.buildLocation(matchLocation);
@@ -1552,8 +1552,8 @@ var RouterCore = class {
       const baseLocation = (opts?.pending === void 0 ? !this.stores.isLoading.get() : opts.pending) ? this.latestLocation : this.stores.resolvedLocation.get() || this.stores.location.get();
       const match = findSingleMatch(next.pathname, opts?.caseSensitive ?? false, opts?.fuzzy ?? false, baseLocation.pathname, this.processedTree);
       if (!match) return false;
-      if (location.params) {
-        if (!deepEqual(match.rawParams, location.params, { partial: true })) return false;
+      if (location2.params) {
+        if (!deepEqual(match.rawParams, location2.params, { partial: true })) return false;
       }
       if (opts?.includeSearch ?? true) return deepEqual(baseLocation.search, next.search, { partial: true }) ? match.rawParams : false;
       return match.rawParams;
@@ -1768,17 +1768,17 @@ var RouterCore = class {
   * Only computes fullPath, accumulated search, and params - skipping expensive
   * operations like AbortController, ControlledPromise, loaderDeps, and full match objects.
   */
-  matchRoutesLightweight(location) {
-    const { matchedRoutes, routeParams } = this.getMatchedRoutes(location.pathname);
+  matchRoutesLightweight(location2) {
+    const { matchedRoutes, routeParams } = this.getMatchedRoutes(location2.pathname);
     const lastRoute = last(matchedRoutes);
-    const accumulatedSearch = { ...location.search };
+    const accumulatedSearch = { ...location2.search };
     for (const route of matchedRoutes) try {
       Object.assign(accumulatedSearch, validateSearch(route.options.validateSearch, accumulatedSearch));
     } catch {
     }
     const lastStateMatchId = last(this.stores.matchesId.get());
     const lastStateMatch = lastStateMatchId && this.stores.matchStores.get(lastStateMatchId)?.get();
-    const canReuseParams = lastStateMatch && lastStateMatch.routeId === lastRoute.id && lastStateMatch.pathname === location.pathname;
+    const canReuseParams = lastStateMatch && lastStateMatch.routeId === lastRoute.id && lastStateMatch.pathname === location2.pathname;
     let params;
     if (canReuseParams) params = lastStateMatch.params;
     else {
@@ -1801,14 +1801,14 @@ var SearchParamError = class extends Error {
 };
 var PathParamError = class extends Error {
 };
-function getInitialRouterState(location) {
+function getInitialRouterState(location2) {
   return {
     loadedAt: 0,
     isLoading: false,
     isTransitioning: false,
     status: "idle",
     resolvedLocation: void 0,
-    location,
+    location: location2,
     matches: [],
     statusCode: 200
   };
@@ -2205,14 +2205,14 @@ var STATIC_ACTIVE_PROPS = {
   "data-status": "active",
   "aria-current": "page"
 };
-function getHrefOption(publicHref, external, history, disabled) {
+function getHrefOption(publicHref, external, history2, disabled) {
   if (disabled) return void 0;
   if (external) return {
     href: publicHref,
     external: true
   };
   return {
-    href: history.createHref(publicHref) || "/",
+    href: history2.createHref(publicHref) || "/",
     external: false
   };
 }
@@ -4753,9 +4753,14 @@ function RootShell({ children }) {
 }
 function RootComponent() {
   const { queryClient } = Route$1.useRouteContext();
+  const redirect2 = sessionStorage.redirect;
+  delete sessionStorage.redirect;
+  if (redirect2 && redirect2 !== location.href) {
+    history.replaceState(null, "", redirect2);
+  }
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter = () => import("./index-CARZeRBU.js");
+const $$splitComponentImporter = () => import("./index-4P3HTicK.js");
 const Route2 = createFileRoute("/")({
   head: () => ({
     meta: [{
