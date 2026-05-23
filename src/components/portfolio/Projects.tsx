@@ -109,7 +109,7 @@ const PROJECTS: Project[] = [
 
     category: "Systems",
 
-    github: "https://github.com/SSmagus/vector-database-engine",
+    github: "https://github.com/SSmagus/vectorDb",
 
     gradient: "from-[#8be0c8]/40 to-[#6edcc1]/40",
   },
@@ -137,7 +137,7 @@ const PROJECTS: Project[] = [
 
     category: "Systems",
 
-    github: "https://github.com/SSmagus/multithreaded-log-search-engine",
+    github: "https://github.com/SSmagus/multithreaded-log-search",
 
     gradient: "from-[#ffd89b]/40 to-[#ffb86b]/40",
   },
@@ -165,7 +165,7 @@ const PROJECTS: Project[] = [
 
     category: "Backend",
 
-    github: "https://github.com/SSmagus/flow-state-zone",
+    github: "https://github.com/SSmagus/flow-zone-cli-tool",
 
     gradient: "from-[#b8b5ff]/40 to-[#8f94fb]/40",
   },
