@@ -6,7 +6,6 @@ export default defineConfig({
 },
 
   vite: {
-    base: "/saumya-portfolio/",
 
     server: {
       proxy: {
