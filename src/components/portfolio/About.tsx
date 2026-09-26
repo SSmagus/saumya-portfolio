@@ -17,16 +17,16 @@ const TIMELINE = [
     title: "B.Tech, Computer Science",
     org: "Poornima University, Jaipur, Rajasthan, India",
     period: "2023 — 2027",
-    detail: "CGPA 9.04 · Coursework in OS, DBMS, Networks, Dsa etc.",
+    detail: "CGPA 9.04 · Coursework in AI, ML, OS, DBMS, Networks, Dsa etc.",
   },
   {
     icon: Briefcase,
     type: "Experience",
-    title: "Contributor at GSSOC",
-    org: "GSSOC foundation",
-    period: "Winter 2025",
+    title: "SWE Intern @ AGODA",
+    org: "Agoda Company Pte. Ltd.",
+    period: "June 2026 - Dec 2026",
     detail:
-      "Built REST + GraphQL APIs in Spring Boot, optimized DB queries (3× faster), shipped Redis cache layer.",
+      "Currently working with Agoda’s RTA Cars (APAC) team, contributing to backend engineering and large-scale travel systems.",
   },
   {
     icon: Trophy,

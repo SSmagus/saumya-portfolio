@@ -47,8 +47,8 @@ const ITEMS = [
 
   {
     year: "2026",
-    title: "Building for scale",
-    text: "Focused on scalable backend systems, distributed architectures, and preparing for high-impact software engineering roles.",
+    title: "Building for scale at AGODA",
+    text: "Focused on scalable backend systems, distributed architectures, and AI incorporation innovations.",
   },
 ];
 
